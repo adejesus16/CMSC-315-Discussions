@@ -30,10 +30,21 @@ def main():
     # 3. Add comments explaining how a dictionary
     #    behaves like a hash table.
     # 4. Display the contents of the dictionary.
+    # Create an empty dictionary to store course information.
+    # Python dictionaries behave like hash tables by using
+    # unique keys to quickly store and retrieve values.
+    courses = {}
 
+    # Add five course codes and course names to the dictionary.
+    courses["CMSC 315"] = "Data Structures and Algorithms"
+    courses["CMSC 320"] = "Relational Database"
+    courses["CMSC 330"] = "Advanced Programming Languages"
+    courses["CMSC 335"] = "Object-Oriented and Concurrent Programming"
+    courses["CMSC 495"] = "Current Trends and Projects in Computer Science"
 
     print("\n=== INSERT OPERATIONS ===")
-    print("TODO: Create a dictionary and add multiple key-value pairs.")
+    print("Courses in the hash table:")
+    print(courses)
 
     # ===============================
     # TODO (Student): LOOKUP OPERATIONS
@@ -45,7 +56,14 @@ def main():
     # 3. Add meaningful comments to explain how the lookup works.
 
     print("\n=== LOOKUP OPERATIONS ===")
-    print("TODO: Demonstrate successful key lookups.")
+    # Look up two courses by using their unique course codes as keys.
+    # A dictionary uses the key to efficiently locate its associated value.
+    course_one = courses["CMSC 315"]
+    course_two = courses["CMSC 320"]
+
+    # Display the results of both successful lookups.
+    print("CMSC 315:", course_one)
+    print("CMSC 320:", course_two)
 
     # ===============================
     # TODO (Student): UPDATE OPERATIONS
@@ -57,8 +75,19 @@ def main():
     # 3. Use comments to explain what happens when an existing key is assigned
     #    a new value.
 
+
     print("\n=== UPDATE OPERATIONS ===")
-    print("TODO: Demonstrate updating an existing key.")
+    # Display the dictionary before changing an existing value.
+    print("Before update:")
+    print(courses)
+
+    # Assigning a new value to an existing key updates that key's value
+    # instead of creating another copy of the key.
+    courses["CMSC 320"] = "Database Systems"
+
+    # Display the dictionary after the update.
+    print("After update:")
+    print(courses)
 
     # ===============================
     # TODO (Student): DELETE OPERATIONS
@@ -70,7 +99,17 @@ def main():
     # 3. Use comments to explain what happens when a key is removed.
 
     print("\n=== DELETE OPERATIONS ===")
-    print("TODO: Demonstrate deleting a key-value pair.")
+    # Display the dictionary before removing a course.
+    print("Before deletion:")
+    print(courses)
+
+    # Delete CMSC 495 from the dictionary.
+    # Removing the key also removes its associated value.
+    del courses["CMSC 495"]
+
+    # Display the dictionary after the course has been removed.
+    print("After deletion:")
+    print(courses)
 
     # ===============================
     # TODO (Student): EDGE CASES
@@ -87,7 +126,18 @@ def main():
     # Explain what happens in each case.
 
     print("\n=== EDGE CASES ===")
-    print("TODO: Demonstrate and explain edge cases.")
+    # Edge Case 1: Try to look up a course that is not in the dictionary.
+    # Using get() prevents an error and returns the provided default message.
+    missing_course = courses.get("CMSC 999", "Course not found.")
+    print("Missing course lookup:", missing_course)
+
+    # Edge Case 2: Safely try to delete a course that does not exist.
+    # Check for the key first so the program does not cause a KeyError.
+    if "CMSC 999" in courses:
+        del courses["CMSC 999"]
+        print("CMSC 999 was removed.")
+    else:
+        print("CMSC 999 cannot be deleted because it is not in the dictionary.")
 
 
 

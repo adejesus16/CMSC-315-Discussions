@@ -30,3 +30,11 @@ Your reflection should be approximately 150–200 words and address the followin
 1. What concepts or skills did you learn while completing this assignment?
 2. What challenges did you encounter, and how did you overcome them?
 3. Explain how hash tables behave, what collisions are, and how hash tables can improve efficiency.
+
+## Completed Implementation
+
+I created a course tracker using a Python dictionary to demonstrate how a hash table works. The course codes were used as unique keys, and the course names were stored as their values.
+
+I demonstrated the main hash table operations by inserting five courses, looking up courses by their keys, updating an existing value, and deleting a key-value pair. I also tested missing keys to show how the program could handle situations where a requested key was not stored in the dictionary.
+
+Python dictionaries use hashing to help locate values based on their keys. This makes dictionaries useful when information needs to be retrieved quickly. A course tracker was a real-world example because a course code could be used as a unique identifier to locate the information associated with that course.
